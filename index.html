@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bite & Brew — a premium cafe serving handcrafted coffee, wood-fired pizzas and desserts made with love.">
+  <title>Bite &amp; Brew | Premium Cafe</title>
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='13' font-size='13'%3E%E2%98%95%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar" data-testid="navbar">
+    <div class="container">
+      <a class="navbar-brand" href="#home" data-testid="brand-logo">
+        <span class="brand-badge"><i class="bi bi-cup-hot-fill"></i></span>
+        <span class="brand-text">Bite <em>&amp;</em> Brew</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation" data-testid="nav-toggle-btn">
+        <i class="bi bi-list"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto mb-3 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+          <li class="nav-item"><a class="nav-link" href="#special">Special</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions d-flex align-items-center justify-content-center justify-content-lg-end gap-2 flex-wrap">
+          <button class="icon-btn" id="themeToggle" aria-label="Switch color theme" data-testid="theme-toggle-btn">
+            <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+          </button>
+          <button class="icon-btn cart-btn" id="cartBtn" aria-label="Open your order" data-testid="cart-btn">
+            <i class="bi bi-bag"></i>
+            <span class="cart-count" id="cartCount" data-testid="cart-count">0</span>
+          </button>
+          <a href="#reservation" class="btn btn-brand btn-nav-reserve" data-testid="reserve-nav-btn">Reserve Table</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="hero d-flex align-items-center">
+    <div class="container position-relative">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6 text-center text-lg-start">
+          <span class="eyebrow reveal"><i class="bi bi-cup-hot-fill"></i> Welcome to Bite &amp; Brew</span>
+          <h1 class="hero-title reveal" data-delay="1">Good Food.<br><span class="text-brand">Great Mood.</span></h1>
+          <p class="hero-sub reveal" data-delay="2">
+            Freshly brewed coffee, wood-fired pizzas and desserts that feel like a warm hug —
+            crafted with love, served with a smile.
+          </p>
+          <div class="hero-cta d-flex gap-3 justify-content-center justify-content-lg-start flex-wrap reveal" data-delay="3">
+            <a href="#menu" class="btn btn-brand btn-lg" data-testid="hero-explore-btn">Explore Menu <i class="bi bi-arrow-right"></i></a>
+            <a href="#special" class="btn btn-outline btn-lg" data-testid="hero-specials-btn">Our Specials</a>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="hero-media reveal" data-delay="2">
+            <img src="https://images.unsplash.com/photo-1742549626436-bf3c11dab212?q=80&w=900&auto=format&fit=crop"
+                 class="hero-img" alt="Freshly brewed coffee at Bite and Brew">
+            <div class="float-card rating-card" data-testid="hero-rating-card">
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+              </div>
+              <strong>4.9</strong>
+              <span>Loved by our guests</span>
+            </div>
+            <div class="float-card fresh-card" data-testid="hero-fresh-card">
+              <span class="fresh-icon"><i class="bi bi-fire"></i></span>
+              <div class="fresh-text">
+                <strong>Hot &amp; Fresh</strong>
+                <span>Straight from the oven</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="categories" class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Categories</span>
+        <h2 class="section-title">What are you craving today?</h2>
+        <p class="section-sub">Pick a category and we will take you straight to the good stuff.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-6 col-md-6 col-lg-3">
+          <div class="cat-card reveal" data-delay="1">
+            <span class="cat-icon"><i class="bi bi-cup-hot-fill"></i></span>
+            <h3>Hot Coffee</h3>
+            <p>Slow-brewed classics and cosy mugs.</p>
+            <button class="explore-link" data-filter="coffee" data-testid="explore-coffee-btn">Explore <i class="bi bi-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3">
+          <div class="cat-card reveal" data-delay="2">
+            <span class="cat-icon"><i class="bi bi-pizza"></i></span>
+            <h3>Pizza &amp; Food</h3>
+            <p>Wood-fired pizzas and hearty bites.</p>
+            <button class="explore-link" data-filter="food" data-testid="explore-food-btn">Explore <i class="bi bi-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3">
+          <div class="cat-card reveal" data-delay="3">
+            <span class="cat-icon"><i class="bi bi-cup-straw"></i></span>
+            <h3>Cold Drinks</h3>
+            <p>Chilled sips for sunny afternoons.</p>
+            <button class="explore-link" data-filter="drinks" data-testid="explore-drinks-btn">Explore <i class="bi bi-arrow-right"></i></button>
+          </div>
+        </div>
+        <div class="col-6 col-md-6 col-lg-3">
+          <div class="cat-card reveal" data-delay="4">
+            <span class="cat-icon"><i class="bi bi-cake2-fill"></i></span>
+            <h3>Desserts</h3>
+            <p>Sweet endings worth saving room for.</p>
+            <button class="explore-link" data-filter="desserts" data-testid="explore-desserts-btn">Explore <i class="bi bi-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Our Menu</span>
+        <h2 class="section-title">Made with love, served with a smile</h2>
+        <p class="section-sub">Search your favourite or filter by category — everything is freshly made.</p>
+      </div>
+
+      <div class="menu-toolbar reveal" data-delay="1">
+        <div class="search-box">
+          <i class="bi bi-search"></i>
+          <input type="text" id="menuSearch" class="form-control" placeholder="Search for coffee, pizza, dessert..." aria-label="Search menu" data-testid="menu-search-input">
+        </div>
+        <div class="filter-group" id="filterGroup">
+          <button class="filter-btn active" data-filter="all" data-testid="filter-all-btn">All</button>
+          <button class="filter-btn" data-filter="coffee" data-testid="filter-coffee-btn">Hot Coffee</button>
+          <button class="filter-btn" data-filter="food" data-testid="filter-food-btn">Pizza &amp; Food</button>
+          <button class="filter-btn" data-filter="drinks" data-testid="filter-drinks-btn">Cold Drinks</button>
+          <button class="filter-btn" data-filter="desserts" data-testid="filter-desserts-btn">Desserts</button>
+        </div>
+      </div>
+
+      <div class="row g-4" id="menuGrid" data-testid="menu-grid"></div>
+
+      <div id="menuEmpty" class="empty-state d-none" data-testid="menu-empty-state">
+        <span class="empty-icon"><i class="bi bi-search"></i></span>
+        <h3>No items found</h3>
+        <p>Try a different keyword or pick another category.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="special" class="section special-section">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-5 text-center">
+          <div class="special-media reveal">
+            <img src="https://images.unsplash.com/photo-1655673654158-9f7285b7d1ea?q=80&w=800&auto=format&fit=crop"
+                 class="special-img" alt="Signature Pizza">
+            <span class="special-badge"><i class="bi bi-star-fill"></i> Chef's Special</span>
+          </div>
+        </div>
+        <div class="col-lg-6 offset-lg-1">
+          <div class="reveal">
+            <span class="eyebrow">Today's Special</span>
+            <h2 class="section-title">Signature Pizza</h2>
+            <p class="special-text">
+              Our chef's masterpiece — a wood-fired thin crust brushed with peri-peri glaze,
+              loaded with roasted tomatoes, basil and a generous layer of premium cheese.
+            </p>
+            <div class="special-chips d-flex flex-wrap gap-2">
+              <span class="chip"><i class="bi bi-fire"></i> Wood-fired crust</span>
+              <span class="chip"><i class="bi bi-database-fill"></i> 100% real mozzarella</span>
+              <span class="chip"><i class="bi bi-heart-fill"></i> Secret house sauce</span>
+            </div>
+            <div class="special-price">₹349</div>
+            <button class="btn btn-brand btn-lg" id="orderSpecialBtn" data-testid="order-special-btn">
+              <i class="bi bi-bag-plus"></i> Order Special
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <div class="about-media reveal">
+            <img src="https://images.unsplash.com/photo-1785302710677-69cc4ea97bee?q=80&w=900&auto=format&fit=crop"
+                 class="about-img" alt="Inside the Bite and Brew cafe">
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span class="eyebrow reveal">Our Story</span>
+          <h2 class="section-title reveal" data-delay="1">Brewed with passion, served like family</h2>
+          <p class="reveal" data-delay="2">
+            Bite &amp; Brew began with one simple belief — a cafe should feel like a second home.
+            What started as a small counter with a single espresso machine has grown into a warm
+            corner where friends meet, families celebrate and every guest is greeted by name.
+          </p>
+          <p class="reveal" data-delay="3">
+            From our wood-fired oven to our slow-brewed coffee, everything on the menu is made
+            fresh, in-house, every single day.
+          </p>
+          <div class="founder-card reveal" data-delay="3" data-testid="founder-card">
+            <img src="https://images.unsplash.com/photo-1747373354116-671ba01db71b?q=80&w=400&auto=format&fit=crop"
+                 class="founder-img" alt="Abhijit Awatare, Founder and Owner of Bite and Brew">
+            <div class="founder-info">
+              <h3>Abhijit Awatare</h3>
+              <span>Founder &amp; Owner</span>
+              <p>"Every cup we serve should feel like home."</p>
+            </div>
+            <i class="bi bi-quote founder-quote"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reservation" class="section">
+    <div class="container">
+      <div class="reserve-panel reveal">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-lg-5 reserve-info">
+            <span class="eyebrow eyebrow-light">Reservations</span>
+            <h2>Reserve a Table</h2>
+            <p>Skip the wait — book your cosy corner in advance and we will keep it warm for you.</p>
+            <ul class="reserve-points">
+              <li><i class="bi bi-clock"></i> Open daily · 9:00 AM – 11:00 PM</li>
+              <li><i class="bi bi-telephone"></i> +91 7350765454</li>
+              <li><i class="bi bi-geo-alt"></i> 12, Brew Street, Camp, Pune</li>
+            </ul>
+          </div>
+
+          <div class="col-lg-7 reserve-form-wrap">
+            <form id="reservationForm" novalidate data-testid="reservation-form">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="resName">Your Name</label>
+                  <input type="text" id="resName" class="form-control" placeholder="e.g. Abhijit Awatare" data-testid="reservation-name-input">
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="resPhone">Phone Number</label>
+                  <input type="tel" id="resPhone" class="form-control" placeholder="+91 7350765454" data-testid="reservation-phone-input">
+                  <div class="invalid-feedback">Please enter a valid phone number.</div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <label class="form-label" for="resDate">Date</label>
+                  <input type="date" id="resDate" class="form-control" data-testid="reservation-date-input">
+                  <div class="invalid-feedback">Please pick a valid date.</div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <label class="form-label" for="resTime">Time</label>
+                  <input type="time" id="resTime" class="form-control" data-testid="reservation-time-input">
+                  <div class="invalid-feedback">Please pick a time.</div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label" for="resGuests">Guests</label>
+                  <select id="resGuests" class="form-select" data-testid="reservation-guests-select">
+                    <option value="" selected>Select guests</option>
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="5">5 Guests</option>
+                    <option value="6">6 Guests</option>
+                    <option value="7+">7+ Guests</option>
+                  </select>
+                  <div class="invalid-feedback">Please select guests.</div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-brand btn-lg w-100" data-testid="reservation-submit-btn">
+                    <i class="bi bi-calendar-check"></i> Book My Table
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Get In Touch</span>
+        <h2 class="section-title">We would love to see you</h2>
+        <p class="section-sub">Drop by for a cup, call us for a quick question or write to us anytime.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <a class="contact-card reveal" data-delay="1" data-testid="contact-visit-card"
+             href="https://www.google.com/maps/search/?api=1&query=Bite+and+Brew+Cafe" target="_blank" rel="noopener">
+            <span class="contact-icon"><i class="bi bi-geo-alt-fill"></i></span>
+            <div class="contact-body">
+              <h3>Visit Us</h3>
+              <p>12, Brew Street, Camp, Pune 411001</p>
+            </div>
+            <i class="bi bi-arrow-up-right contact-arrow"></i>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a class="contact-card reveal" data-delay="2" data-testid="contact-call-card" href="tel:+919876543210">
+            <span class="contact-icon"><i class="bi bi-telephone-fill"></i></span>
+            <div class="contact-body">
+              <h3>Call Us</h3>
+              <p>+91 7350765454</p>
+            </div>
+            <i class="bi bi-arrow-up-right contact-arrow"></i>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a class="contact-card reveal" data-delay="3" data-testid="contact-email-card" href="mailto:hello@biteandbrew.in">
+            <span class="contact-icon"><i class="bi bi-envelope-fill"></i></span>
+            <div class="contact-body">
+              <h3>Email Us</h3>
+              <p>hello@biteandbrew.in</p>
+            </div>
+            <i class="bi bi-arrow-up-right contact-arrow"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row gy-4 footer-top">
+        <div class="col-lg-4 col-md-6">
+          <a class="navbar-brand footer-brand" href="#home">
+            <span class="brand-badge"><i class="bi bi-cup-hot-fill"></i></span>
+            <span class="brand-text">Bite <em>&amp;</em> Brew</span>
+          </a>
+          <p class="footer-desc">
+            Your neighbourhood premium cafe — handcrafted coffee, wood-fired pizza and
+            desserts made fresh every day.
+          </p>
+          <div class="footer-social d-flex gap-2">
+            <a href="#" class="social-btn" aria-label="Instagram" data-testid="social-instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-btn" aria-label="Facebook" data-testid="social-facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-btn" aria-label="Twitter" data-testid="social-twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-btn" aria-label="YouTube" data-testid="social-youtube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 col-md-3">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#special">Special</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-3">
+          <h5 class="footer-title">Contact</h5>
+          <ul class="footer-contact">
+            <li><i class="bi bi-geo-alt"></i> 12, Brew Street, Camp, Pune 411001</li>
+            <li><i class="bi bi-telephone"></i> +91 7350765454</li>
+            <li><i class="bi bi-envelope"></i> hello@biteandbrew.in</li>
+            <li><i class="bi bi-clock"></i> Open daily · 9 AM – 11 PM</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12">
+          <h5 class="footer-title">Newsletter</h5>
+          <p class="footer-desc">Fresh offers and new menu drops, straight to your inbox.</p>
+          <form id="newsletterForm" class="newsletter-form" novalidate data-testid="newsletter-form">
+            <input type="email" id="newsletterEmail" class="form-control" placeholder="Your email address" aria-label="Email address" data-testid="newsletter-email-input">
+            <button type="submit" class="btn btn-brand" aria-label="Subscribe" data-testid="newsletter-submit-btn"><i class="bi bi-send"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex justify-content-between flex-wrap gap-2">
+        <span>© <span id="year">2026</span> Bite &amp; Brew. All rights reserved.</span>
+        <span>Crafted fresh daily <i class="bi bi-cup-hot-fill"></i></span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true" data-testid="cart-modal">
+    <div class="modal-dialog modal-dialog-centered modal-lg cart-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">
+            <i class="bi bi-bag-fill"></i> Your Order
+            <span class="cart-modal-count" id="cartModalCount">0 items</span>
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="cartItems" data-testid="cart-items"></div>
+        </div>
+        <div class="modal-footer cart-footer">
+          <div class="cart-total-row">
+            <span>Total</span>
+            <strong id="cartTotal" data-testid="cart-total">₹0</strong>
+          </div>
+          <div class="cart-footer-btns d-flex gap-2">
+            <button class="btn btn-outline" id="clearCartBtn" data-testid="clear-cart-btn">Clear Cart</button>
+            <button class="btn btn-brand" id="checkoutBtn" data-testid="checkout-btn">Place Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top" data-testid="back-to-top-btn">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <div class="toast-box" id="toastBox" data-testid="toast-box"></div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
